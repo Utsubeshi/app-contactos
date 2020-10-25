@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "99317717796",
+    "firebase_url": "https://appcontactos-40a36.firebaseio.com",
+    "project_id": "appcontactos-40a36",
+    "storage_bucket": "appcontactos-40a36.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:99317717796:android:cfff7dcf9e276e614eb1b1",
+        "android_client_info": {
+          "package_name": "com.lahielera.appcontactos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "99317717796-m6t5j08odv5ah2vobrmevufh1i6su1ec.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lahielera.appcontactos",
+            "certificate_hash": "29ce0904a87e5d8147fb4ec73d8494bd7a00e4d9"
+          }
+        },
+        {
+          "client_id": "99317717796-2rue4g46m9cije1k2gc68gfnr4vom38g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_NABTxD6FIWZpXztgel8rpt0PchcO9n0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "99317717796-2rue4g46m9cije1k2gc68gfnr4vom38g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
