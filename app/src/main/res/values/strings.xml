@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AppContactos</string>
+    <string name="app_name">Contactos</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
@@ -13,7 +13,11 @@
     <string name="password_login">Ingrese su contraseña</string>
     <string name="login_btn_texto">Ingresar</string>
     <string name="registrarse_btn_text">Registrarse</string>
-    <string name="login_text">Login de usuarios</string>
+    <string name="login_text">Login</string>
     <string name="registro_nombre">Ingrese su nombre</string>
     <string name="registro_apellido">Ingrese sus apellidos</string>
+    <string name="ingrese_celular">Ingrese su celular</string>
+    <string name="ingrese_fijo">Ingrese su telf. fijo</string>
+    <string name="boton_guardar_contacto">guardar contacto</string>
+    <string name="contactos_label">Contactos</string>
 </resources>

@@ -11,69 +11,86 @@
         android:layout_margin="@dimen/margin_8dp"
         tools:context=".ui.registro.RegistroFragment">
 
-        <TextView
-            android:id="@+id/textView3"
-            android:text="Registro de usuarios"
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             app:layout_constraintBottom_toTopOf="@+id/mail_layout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            style="@style/label_text_style" />
+            app:srcCompat="@drawable/ic_undraw_welcome_3gvl" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/mail_layout"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
             app:layout_constraintBottom_toTopOf="@+id/pass_layout"
-            app:layout_constraintTop_toBottomOf="@+id/textView3">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/registro_mail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/login_mail" />
+                android:hint="@string/login_mail"
+                android:inputType="textEmailAddress" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/pass_layout"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
             app:layout_constraintBottom_toTopOf="@+id/nombres_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mail_layout">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/registro_pass"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/password_login" />
+                android:hint="@string/password_login"
+                android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/nombres_layout"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
             app:layout_constraintBottom_toTopOf="@+id/apellidos_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/pass_layout">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/registro_nombres"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/registro_nombre" />
+                android:hint="@string/registro_nombre"
+                android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/apellidos_layout"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toTopOf="@+id/boton_registro"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/nombres_layout">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/registro_apellidos"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/registro_apellido" />
+                android:hint="@string/registro_apellido"
+                android:inputType="text" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -81,12 +98,12 @@
             android:id="@+id/boton_registro"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
             android:layout_weight="1"
             android:text="@string/registrarse_btn_text"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/apellidos_layout" />
+            app:layout_constraintStart_toStartOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

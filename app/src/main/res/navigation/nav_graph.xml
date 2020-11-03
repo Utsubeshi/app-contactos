@@ -7,8 +7,8 @@
 
     <fragment
         android:id="@+id/FirstFragment"
-        android:name="com.lahielera.appcontactos.ui.menu.FirstFragment"
-        android:label="@string/first_fragment_label"
+        android:name="com.lahielera.appcontactos.ui.menu.ContactosFragment"
+        android:label="@string/contactos_label"
         tools:layout="@layout/fragment_first">
 
         <action
@@ -24,5 +24,10 @@
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
+        <argument
+            android:name="contacto"
+            app:argType="com.lahielera.appcontactos.model.Contacto"
+            app:nullable="true"
+            android:defaultValue="@null" />
     </fragment>
 </navigation>

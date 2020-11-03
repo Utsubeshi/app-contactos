@@ -8,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -15,6 +17,7 @@ import com.google.firebase.ktx.Firebase
 import com.lahielera.appcontactos.LoginActivity
 import com.lahielera.appcontactos.R
 import com.lahielera.appcontactos.databinding.RegistroFragmentBinding
+import java.util.*
 
 class RegistroFragment : Fragment() {
 
@@ -36,21 +39,23 @@ class RegistroFragment : Fragment() {
         binding.botonRegistro.setOnClickListener {
             crearCuenta(binding.mailLayout.editText?.text.toString()
                 , binding.passLayout.editText?.text.toString()
-                , binding.nombresLayout.editText?.text.toString()
-                , binding.apellidosLayout.editText?.text.toString())
+                , binding.nombresLayout.editText?.text.toString().capitalize(Locale.getDefault())
+                , binding.apellidosLayout.editText?.text.toString().capitalize(Locale.getDefault()))
         }
-
         return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(RegistroViewModel::class.java)
-        // TODO: Use the ViewModel
+        viewModel.registroCompleto.observe(viewLifecycleOwner, Observer { registroCompletado ->
+            if (registroCompletado) moveToLogin()
+        })
         auth = Firebase.auth
     }
 
     private fun crearCuenta(mail: String, pass: String, nombres: String, apellidos: String){
+
         if (!validarFormulario()) return
 
         auth.createUserWithEmailAndPassword(mail, pass)
@@ -62,7 +67,7 @@ class RegistroFragment : Fragment() {
                         Toast.LENGTH_SHORT
                     ).show()
                     (activity as LoginActivity).moveToMain()
-                    viewModel.saveUserData(nombres, apellidos, auth.currentUser?.uid)
+                    viewModel.saveUserData(nombres, apellidos, auth.currentUser?.uid, mail)
                 } else {
                     Toast.makeText(
                         requireContext(),
@@ -74,8 +79,12 @@ class RegistroFragment : Fragment() {
     }
 
     private fun validarFormulario(): Boolean {
-        //TODO
+        //TODO debo validar los campos vacios algun dia D:!
         return true
+    }
+
+    private fun moveToLogin(){
+        findNavController().navigate(RegistroFragmentDirections.actionNavRegistroToNavLogin2())
     }
 
 }

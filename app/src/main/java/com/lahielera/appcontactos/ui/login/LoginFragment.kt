@@ -39,18 +39,16 @@ class LoginFragment : Fragment() {
             container,
             false
         )
-
+        (activity as LoginActivity).createNotificationChannel()
         with(binding) {
             botonLogin.setOnClickListener {
                 signIn(usuarioLogin.text.toString()
                     , passwordLogin.text.toString())
             }
-
             botonRegistrarse.setOnClickListener {
                 moveToRegistro()
             }
         }
-
         return binding.root
     }
 
@@ -78,7 +76,10 @@ class LoginFragment : Fragment() {
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     Toast.makeText(requireContext(), "Bienvenido!", Toast.LENGTH_SHORT).show()
-                    (activity as LoginActivity).moveToMain()
+                    (activity as LoginActivity).apply {
+                        sendNotification(email)
+                        moveToMain()
+                    }
                 } else {
                     Toast.makeText(
                         requireContext(),
@@ -120,5 +121,9 @@ class LoginFragment : Fragment() {
         private const val TAG = "GoogleActivity"
         private const val RC_SIGN_IN = 9001
     }
+
+//    private fun sendNotification() {
+//
+//    }
 
 }
